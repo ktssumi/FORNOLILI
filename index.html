@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="img/imagem-1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>Forninho da Lili | Doces por encomenda</title>
+<meta name="description" content="Cookies, docinhos de goiabada e coxinhas doces. Peça pelo WhatsApp.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div id="scroll-prog" aria-hidden="true"></div>
+  <div class="topo">
+    <a class="logo" href="#inicio" aria-label="Forninho da Lili, início"><img src="img/imagem-2.jpg" alt="Logo do Forninho da Lili"><span>Forninho da Lili</span></a>
+    <nav aria-label="Principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#galeria">Fotos</a>
+      <a href="#pedido">Como pedir</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero">
+    <span class="flutua" aria-hidden="true">💗</span><span class="flutua" aria-hidden="true">🍪</span><span class="flutua" aria-hidden="true">✨</span><span class="flutua" aria-hidden="true">🍬</span><span class="flutua" aria-hidden="true">🧁</span><span class="flutua" aria-hidden="true">🍓</span>
+    <div class="container">
+      <img class="hero-logo" src="img/imagem-2.jpg" alt="Forninho da Lili: menina confeiteira segurando um doce no potinho">
+      <span class="selo">Doces artesanais por encomenda</span>
+      <h1>Doce na hora do intervalo, feito com carinho</h1>
+      <p>Escolha seus doces, informe seu nome e a data e envie o pedido para a Dani pelo WhatsApp. Rápido e sem complicação.</p>
+      <a class="btn" href="#cardapio">Ver cardápio</a>
+      <ul class="selos" aria-label="Destaques"><li>🧁 Feito à mão</li><li>📅 Sob encomenda</li><li>💸 Pix ou dinheiro</li><li>📍 Retirada ou entrega</li></ul>
+    </div>
+  </section>
+
+  <section id="pedido" aria-labelledby="t-como">
+    <div class="container">
+      <h2 id="t-como">Como pedir</h2>
+      <p class="sub">Três passos, do cardápio ao WhatsApp.</p>
+      <div class="progresso" aria-hidden="true"><i id="barra-prog"></i></div>
+      <div class="passos">
+        <div class="passo" id="passo1"><b class="num">1</b><div><b>Escolha</b><br>Toque em + nos doces que quer.</div></div>
+        <div class="passo" id="passo2"><b class="num">2</b><div><b>Nome e data</b><br>Informe seu nome, data, pagamento e forma de recebimento.</div></div>
+        <div class="passo" id="passo3"><b class="num">3</b><div><b>Envie no WhatsApp</b><br>A mensagem já sai pronta. É só enviar.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cardapio" aria-labelledby="t-card">
+    <div class="container">
+      <h2 id="t-card">Cardápio</h2>
+      <p class="sub">Ingredientes e alérgenos <span class="conf">a confirmar com a Dani</span></p>
+
+      <div class="filtros" role="group" aria-label="Filtrar por grupo">
+        <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-f="cookies" aria-pressed="false">Cookies</button>
+        <button type="button" data-f="goiabada" aria-pressed="false">Docinhos</button>
+        <button type="button" data-f="coxinha" aria-pressed="false">Coxinhas doces</button>
+        <button type="button" data-f="fav" aria-pressed="false">♥ Favoritos</button>
+      </div>
+
+      <div class="ferramentas"><input id="busca" type="search" placeholder="🔍 Buscar um doce..." aria-label="Buscar doce"><button type="button" class="btn-sec" id="surpresa">🎲 Me surpreenda</button></div>
+      <div class="grade" id="grade"></div>
+    </div>
+  </section>
+
+  <section id="galeria" aria-labelledby="t-gal">
+    <div class="container">
+      <h2 id="t-gal">Nossos docinhos</h2>
+      <p class="sub">Fotos reais feitas pela Dani. Toque para ampliar.</p>
+      <div class="galeria" id="galeria-grade"></div>
+    </div>
+  </section>
+
+  <section id="dados" aria-labelledby="t-dados">
+    <div class="container">
+      <h2 id="t-dados">Seus dados</h2>
+      <p class="sub">Campos obrigatórios (<span style="color:var(--vermelho)">*</span>) para enviar o pedido.</p>
+      <div class="caixa">
+        <div class="campo" style="margin-top:0">
+          <label for="nome">Seu nome <span aria-hidden="true">*</span></label>
+          <input id="nome" type="text" autocomplete="name" placeholder="Ex.: Ana" required aria-required="true" aria-describedby="erro-nome">
+          <div class="erro" id="erro-nome" role="alert">Informe seu nome.</div>
+        </div>
+        <div class="campo">
+          <label for="data">Data desejada para receber <span aria-hidden="true">*</span></label>
+          <input id="data" type="date" required aria-required="true" aria-describedby="erro-data">
+          <div class="erro" id="erro-data" role="alert">Escolha a data desejada.</div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:28px">Pagamento e recebimento</h2>
+      <p class="sub">Escolha como prefere pagar e receber seu pedido.</p>
+
+      <div class="caixa">
+        <h3>💸 Forma de pagamento <span style="color:var(--vermelho)">*</span></h3>
+        <div class="opcoes" role="radiogroup" aria-label="Forma de pagamento">
+          <label class="opcao"><input type="radio" name="pagamento" value="Pix">
+            <span><b>Pix</b><small>A Dani combinará os detalhes pelo WhatsApp.</small></span></label>
+          <label class="opcao"><input type="radio" name="pagamento" value="Dinheiro">
+            <span><b>Dinheiro</b><small>Combine com a Dani o pagamento no momento adequado.</small></span></label>
+        </div>
+        <div class="erro-geral" id="erro-pagamento" role="alert">Selecione uma forma de pagamento.</div>
+      </div>
+
+      <div class="caixa" style="margin-top:14px">
+        <h3>📍 Como deseja receber? <span style="color:var(--vermelho)">*</span></h3>
+        <div class="opcoes" role="radiogroup" aria-label="Forma de recebimento">
+          <label class="opcao"><input type="radio" name="recebimento" value="Retirada">
+            <span><b>Retirar em local a combinar</b><small>O local e o horário serão combinados com a Dani pelo WhatsApp.</small></span></label>
+          <label class="opcao"><input type="radio" name="recebimento" value="Entrega">
+            <span><b>Quero receber por entrega</b><small>Informe o endereço completo. A disponibilidade e eventual taxa serão confirmadas pela Dani.</small></span></label>
+        </div>
+        <div class="erro-geral" id="erro-recebimento" role="alert">Escolha retirada ou entrega.</div>
+        <div class="campo condicional" id="campo-endereco">
+          <label for="endereco">Endereço para entrega <span aria-hidden="true">*</span></label>
+          <input id="endereco" type="text" autocomplete="street-address" placeholder="Rua, número, bairro, complemento e referência">
+          <div class="erro" id="erro-endereco" role="alert">Informe o endereço para entrega.</div>
+        </div>
+      </div>
+
+      <div class="caixas" style="margin-top:14px">
+        <div class="caixa"><h3>⏰ Antecedência</h3>
+          <p>Os doces são feitos por encomenda, então peça com antecedência.</p>
+          <p class="info">Prazo mínimo: <span class="conf">A CONFIRMAR (ex.: 24h)</span></p></div>
+        <div class="caixa"><h3>📍 Entrega</h3>
+          <p>A possibilidade de entrega e eventual taxa dependem da confirmação da Dani.</p>
+          <p class="info">Área atendida e taxa: <span class="conf">A CONFIRMAR</span></p></div>
+        <div class="caixa"><h3>💬 Confirmação</h3>
+          <p>A Dani confirmará disponibilidade, valor final e detalhes pelo WhatsApp.</p></div>
+      </div>
+
+      <div class="politica">
+        <h3>📋 Política de desistência e cancelamento</h3>
+        <p class="politica-texto"><b>Desistência:</b> se o cliente desistir do pedido no meio do prazo, deverá pagar <b>50% do valor</b> do pedido. Para desistir, avise a Dani pelo WhatsApp o quanto antes. Ao marcar a caixa abaixo, o cliente confirma que leu e concorda com esta política.</p>
+        <label class="aceite" id="label-aceite">
+          <input type="checkbox" id="aceite-politica">
+          <span>Li e concordo com a política de desistência e cancelamento apresentada acima. <span style="color:var(--vermelho)">*</span></span>
+        </label>
+        <div class="erro-geral" id="erro-politica" role="alert">É necessário aceitar a política para enviar o pedido.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="duvidas" aria-labelledby="t-duv">
+    <div class="container">
+      <h2 id="t-duv">Dúvidas frequentes</h2>
+      <details>
+        <summary>Os doces têm alérgenos?</summary>
+        <p>Sim. Os alérgenos de cada produto ficam no cardápio e na embalagem (ex.: "Contém glúten"). Em caso de dúvida, pergunte à Dani no WhatsApp antes de pedir.</p>
+      </details>
+      <details>
+        <summary>Por que preciso informar nome e data?</summary>
+        <p>Os doces são feitos sob encomenda. Com seu nome e a data, a Dani organiza a produção e a entrega.</p>
+      </details>
+      <details>
+        <summary>Como sei se o doce está disponível?</summary>
+        <p>O cardápio indica "Disponível" ou "Esgotado". A Dani confirma tudo pelo WhatsApp.</p>
+      </details>
+      <details>
+        <summary>Quais formas de pagamento?</summary>
+        <p>Pix ou dinheiro.</p>
+      </details>
+      <details>
+        <summary>E se eu atrasar ou desistir?</summary>
+        <p>Se desistir no meio do prazo, será cobrado 50% do valor do pedido. A política completa fica na área do pedido, antes do envio.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img class="foot-logo" src="img/imagem-2.jpg" alt="">
+  <div><b>Forninho da Lili</b> · Doces artesanais</div>
+  <div style="margin-top:12px"><a class="foot-wa" href="https://wa.me/5511989634843" target="_blank" rel="noopener">💬 Falar com a Dani no WhatsApp</a></div>
+  <div class="aviso">Protótipo escolar. Nenhuma compra é realizada neste site.</div>
+</footer>
+
+<div class="barra">
+  <div class="in">
+    <button type="button" class="resumo" id="resumo" aria-live="polite" title="Ver meu pedido">Nenhum item escolhido</button>
+    <a class="btn" id="enviar" href="#cardapio" aria-disabled="true" rel="noopener">Pedir pelo WhatsApp</a>
+  </div>
+</div>
+
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <div class="lb-in">
+    <button type="button" class="fechar" id="lb-fechar" aria-label="Fechar foto">✕</button>
+    <button type="button" class="nav ant" id="lb-ant" aria-label="Foto anterior">‹</button>
+    <img id="lb-img" alt="">
+    <div class="lb-leg" id="lb-leg"></div>
+    <div class="lb-cont" id="lb-cont"></div>
+    <button type="button" class="nav prox" id="lb-prox" aria-label="Próxima foto">›</button>
+  </div>
+</dialog>
+<dialog class="ped" id="ped" aria-label="Meu pedido"><div class="ped-in">
+  <h3>🛒 Meu pedido</h3>
+  <ul id="ped-lista"></ul>
+  <div class="ped-acoes"><button type="button" class="btn-sec" id="ped-fechar">Escolher mais</button><button type="button" class="btn" id="ped-continuar">Continuar</button></div>
+</div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
